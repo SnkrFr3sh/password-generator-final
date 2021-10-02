@@ -4,12 +4,33 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword (){
-  var passwordLength = prompt("How many characters would you like your password to have?");
+  var passwordLength = prompt("How many characters would you like your password to have? (8-128 characters)");
 
-  if (passwordLength < 8 || passwordLength > 128) {
+  // if (isNaN(passworLength) || passwordLength < 8 || passwordLength < 128){
+  //   alert("Input must be a numerical valur & Password length must be between 8-128 characters long.")
+  // };
+
+  if ((passwordLength < 8) || (passwordLength > 128)) {
     alert("Password length must be between 8-128 characters long.")
-    var passwordLength = prompt("How many characters would you like your password to have?")
-  }
+    var passwordLength = prompt("How many characters would you like your password to have? (8-128 characters)")
+    generatePassword()
+  } 
+  
+  // if (passwordLength == Number){
+  //   alert("Please input a numerical value")
+  //   generatePassword();
+  // } else if (passwordLength < 8 || passwordLength > 128 && Number) {
+  //   alert("Password length must be between 8-128 characters long.")
+  //   // var passwordLength = prompt("How many characters would you like your password to have?")
+  //   generatePassword();
+  // } 
+  
+  //  else if (passwordLength = "")
+  //   alert("Please add a numeric value.")
+  //   var passwordLength = prompt("How many characters would you like your password to have?");
+
+
+
 
   alert("Your password will be " + passwordLength + " characters long.");
   var alphaLowerConfirm = confirm("Do you want lowercase characters?");
@@ -73,4 +94,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
